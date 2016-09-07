@@ -1,0 +1,46 @@
+# Ratpoison Config
+##Ratpoison Config
+
+##basic looks
+exec xsetroot -cursor_name left_ptr
+startup_message off
+set border 1
+set barpadding 0 0 0 0
+set padding 0 0 0 0
+set fgcolor white
+set bgcolor blue
+set fwcolor red
+set wingravity center
+set font "Terminus:size=12"
+set winname name
+
+exec setxkbmap -option caps:none && sleep 1s && xmodmap -e "keycode 66 = F30"
+escape F30
+
+##window operations
+#restart ratpoison
+bind C-r restart
+#list open windows
+definekey top M-Tab exec ~/bin/ratmenu-win.sh
+definekey top s-P exec ~/bin/clipster -s
+definekey top s-e exec urxvt -e bash -c "/usr/bin/gvim"
+definekey top M-space other
+
+#switch between windows
+definekey top M-j next
+definekey top M-k prev
+
+#apps
+##console - urxvt+tmux
+definekey top s-c exec urxvt
+definekey top s-C exec urxvt -e bash -c "tmux -q has-session && exec tmux new-window || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+definekey top s-b exec /usr/local/bin/vimb
+definekey top s-B exec /usr/bin/dillo
+definekey top s-f exec urxvt -e bash -c "/usr/bin/mc"
+definekey top s-r exec dmenu_run
+# note: s=super (winkey)
+
+# startup
+## launch urxvt with a tmux session
+exec ~/bin/clipster -c -d &
+exec feh --bg-fill pics/wallp/Overlap.png

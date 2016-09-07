@@ -1,0 +1,44 @@
+# augroup mygroup
+#   autocmd LoadCommited https://www.youtube.com/watch* :shell mpv %<CR>
+# augroup end
+
+# set accelerated-compositing=true
+# set auto-load-images=true
+# set auto-resize-window=true
+set auto-shrink-images=true
+# set ca-bundle=~/.config/vimb/ca-bundle.crt
+# set closed-max-items=20
+# set download-path=/net/downloads/http
+set download-path=~/
+set editor-command="gvim -f"
+# set fontsize=12px
+set frame-flattening=true
+set hint-timeout=1000
+# set hintkeys=arstdoienh
+set history-max-items=99999
+# set hsts=false
+set input-autohide=true
+set input-bg-normal=#464f52
+set input-fg-normal=#fdf6e3
+# set home-page=http://this-page-intentionally-left-blank.org/
+set home-page=https://www.duckduckgoog.com/
+# set smooth-scrolling=true
+set spacial-navigation=true
+# set spell-checking=true
+set statusbar=true
+set status-font='monospace bold 10'
+set strict-ssl=false
+set webinspector=true
+shortcut-default ddg
+
+shortcut-add ddg=http://www.duckduckgoog.com/?q=$0
+shortcut-add 13=http://1337x.org/search/$0/0/
+shortcut-add ac=http://www.allacronyms.com/$0
+shortcut-add al=http://alternativeto.net/software/$0/?platform=linux
+shortcut-add cr=http://crunchbanglinux.org/forums/search/?action=search&keywords=$0&show_as=topics
+shortcut-add di=http://dictionary.reference.com/browse/$0
+shortcut-add gi=https://github.com/search?q=$0
+shortcut-add go=https://encrypted.google.com/search?q=$0
+shortcut-add su=http://www.subtitleseeker.com/search/TITLES/$0
+shortcut-add th=http://thesaurus.com/browse/$0
+shortcut-add wi=http://en.wikipedia.org/w/index.php?title=Special:Search&search=$0

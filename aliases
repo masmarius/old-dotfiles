@@ -1,0 +1,136 @@
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
+## get rid of command not found ##
+alias cd..='cd ..'
+
+## a quick way to get out of current directory ##
+alias ..='cd ..'
+alias ...='cd ../../../'
+alias ....='cd ../../../../'
+alias .....='cd ../../../../'
+alias .4='cd ../../../../'
+alias .5='cd ../../../../..'
+
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+## Tmux in 256 colors
+alias tmux='tmux -2'
+
+## Create parent directories on demand
+alias mkdir='mkdir -pv'
+
+# Make mount command output pretty and human readable format
+alias mount='mount |column -t'
+
+# handy short cuts #
+alias h='history'
+alias j='jobs -l'
+alias path='echo -e ${PATH//:/\\n}'
+alias now='date +"%T"'
+alias nowtime=now
+alias nowdate='date +"%d-%m-%Y"'
+
+# Set vim as default
+alias vi=vim
+alias svi='sudo vi'
+alias vis='vim "+set si"'
+alias edit='vim'
+
+# Wakeup sleeping servers
+
+## replace mac with your actual server mac address #
+#alias wakeupnas01='/usr/bin/wakeonlan 00:11:32:11:15:FC'
+#alias wakeupnas02='/usr/bin/wakeonlan 00:11:32:11:15:FD'
+#alias wakeupnas03='/usr/bin/wakeonlan 00:11:32:11:15:FE'
+
+# confirmation #
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# Update Debian Linux server
+# install with apt-get
+alias apt-get="sudo apt-get"
+alias updatey="sudo apt-get --yes"
+
+# update on one command
+alias update='sudo apt-get update && sudo apt-get upgrade'
+
+# Tune sudo and su
+# become root #
+alias root='sudo -i'
+alias su='sudo -i'
+
+# Pass halt/reboot via sudo
+alias reboot='sudo /sbin/reboot'
+alias poweroff='sudo /sbin/poweroff'
+alias halt='sudo /sbin/halt'
+alias shutdown='sudo /sbin/shutdown'
+
+# Control web servers
+
+# Desktop specific – play avi/mp3 files on demand
+## play video files in a current directory ##
+# cd ~/Download/movie-name
+# playavi or vlc
+alias playavi='mpv *.avi'
+
+# play all music files from the current directory #
+alias playwave='for i in *.wav; do mplayer "$i"; done'
+alias playogg='for i in *.ogg; do mplayer "$i"; done'
+alias playmp3='for i in *.mp3; do mplayer "$i"; done'
+
+# Get system memory, cpu usage, and gpu memory info quickly
+## pass options to free ##
+alias meminfo='free -m -l -t'
+## get top process eating memory
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+## get top process eating cpu ##
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+## Get server cpu info ##
+alias cpuinfo='lscpu'
+## older system use /proc/cpuinfo ##
+##alias cpuinfo='less /proc/cpuinfo' ##
+## get GPU ram on desktop / laptop##
+alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
+
+# Resume wget by default
+alias wget='wget -c'
+
+## set some other defaults ##
+alias df='df -H'
+alias du='du -ch'
+
+# top is atop, just like vi is vim
+alias top='atop'
+
+# search with googler (dependency)
+alias g='~/bin/googler'
+
+# hub alias
+eval "$(hub alias -s)"
+
+# search functions
+ddg() {
+    search=""
+    echo "DuckDuckGoogling: $@"
+    for term in $@; do
+        search="$search%20$term"
+    done
+    www-browser "http://www.duckduckgoog.com/?q=$search"
+}
+
