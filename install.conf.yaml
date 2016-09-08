@@ -8,6 +8,7 @@
     ~/.dotfiles: ''
     ~/.lynxrc: lynxrc
     ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux/
     ~/.aliases: aliases
     ~/.bashrc: bashrc
     ~/.profile: profile

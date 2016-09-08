@@ -134,3 +134,4 @@ ddg() {
     www-browser "http://www.duckduckgoog.com/?q=$search"
 }
 
+alias tv='terminal_velocity'

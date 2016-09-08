@@ -1,46 +1,57 @@
-# Ratpoison Config
 ##Ratpoison Config
 
 ##basic looks
 exec xsetroot -cursor_name left_ptr
 startup_message off
-set border 1
+set border 2
 set barpadding 0 0 0 0
 set padding 0 0 0 0
 set fgcolor white
 set bgcolor blue
-set fwcolor red
+set fwcolor grey
 set wingravity center
 set font "Terminus:size=12"
 set winname name
 
+##new escape (prefix) key: CapsLock
 exec setxkbmap -option caps:none && sleep 1s && xmodmap -e "keycode 66 = F30"
 escape F30
 
+##virtual desks
+gnewbg one
+gnewbg two
+definekey top s-j exec ratpoison -c "select -" -c "gprev" -c "next"
+definekey top s-k exec ratpoison -c "select -" -c "gnext" -c "next"
+
+##workspaces
+#exec /usr/bin/rpws init 4 -k
+#bind s-1 exec rpws 1
+#bind s-2 exec rpws 2
+#bind s-3 exec rpws 3
+#bind s-4 exec rpws 4
+
 ##window operations
-#restart ratpoison
 bind C-r restart
 #list open windows
 definekey top M-Tab exec ~/bin/ratmenu-win.sh
 definekey top s-P exec ~/bin/clipster -s
 definekey top s-e exec urxvt -e bash -c "/usr/bin/gvim"
-definekey top M-space other
-
+definekey top M-space next
 #switch between windows
 definekey top M-j next
 definekey top M-k prev
 
-#apps
-##console - urxvt+tmux
+##apps
 definekey top s-c exec urxvt
+#definekey top s-C exec urxvt -e bash -c "tmux -q has-session && exec tmux attach-session -d || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
 definekey top s-C exec urxvt -e bash -c "tmux -q has-session && exec tmux new-window || exec tmux new-session -n$USER -s$USER@$HOSTNAME"
+definekey top s-n exec urxvt -e bash -c "tmux -q has-session && terminal_velocity || exec tmux new-session -n$USER -s$USER@$HOSTNAME && terminal_velocity"
 definekey top s-b exec /usr/local/bin/vimb
 definekey top s-B exec /usr/bin/dillo
 definekey top s-f exec urxvt -e bash -c "/usr/bin/mc"
 definekey top s-r exec dmenu_run
-# note: s=super (winkey)
+#definekey top s-n exec urxvt -e bash -c "terminal_velocity"
 
-# startup
-## launch urxvt with a tmux session
+##startup
 exec ~/bin/clipster -c -d &
 exec feh --bg-fill pics/wallp/Overlap.png

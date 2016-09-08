@@ -107,6 +107,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# run tmux at startup if available
+if command -v tmux>/dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+
 # Exports
 ### Added by surfraw. To remove use surfraw-update-path -remove
 	export PATH=$PATH:/usr/lib/surfraw

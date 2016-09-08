@@ -43,34 +43,54 @@ urxvt*cursorColor: #DCDCCC
 ! urxvt*transparent:true
 
 ! - color scheme
-urxvt.background:  #000000
-urxvt.foreground:  #EBEBFF
+!urxvt.background:  #000000
+!urxvt.foreground:  #EBEBFF
 ! black + red
 ! urxvt*color0:     #3f3f3f
-urxvt*color0:      #000000
-urxvt*color1:      #e01010
+!urxvt*color0:      #000000
+!urxvt*color1:      #e01010
 ! green + yellow
-urxvt*color2:      #00AA00
-urxvt*color3:      #FFFF00
+!urxvt*color2:      #00AA00
+!urxvt*color3:      #FFFF00
 ! blue + purple
-urxvt*color4:      #112037
-urxvt*color5:      #A020F0
+!urxvt*color4:      #112037
+!urxvt*color5:      #A020F0
 ! cyan + white
-urxvt*color6:      #5B5BC7
-urxvt*color7:      #fefefe
+!urxvt*color6:      #5B5BC7
+!urxvt*color7:      #fefefe
 ! bright-black + bright-red
-urxvt*color8:      #6a6a6a
-urxvt*color9:      #FF5555
+!urxvt*color8:      #6a6a6a
+!urxvt*color9:      #FF5555
 ! bright-green + bright-yellow
-urxvt*color10:     #90EE90
-urxvt*color11:     #ffff2f
+!urxvt*color10:     #90EE90
+!urxvt*color11:     #ffff2f
 ! bright-blue + bright-purple
-urxvt*color12:     #5B5BC7
-urxvt*color13:     #e628ba
+!urxvt*color12:     #5B5BC7
+!urxvt*color13:     #e628ba
 ! bright-cyan + bright-white
-urxvt*color14:     #7D7DFB
-urxvt*color15:     #ffffff
+!urxvt*color14:     #7D7DFB
+!urxvt*color15:     #ffffff
 
+! Molokai theme
+! Original value: URxvt*background: #101010
+URxvt*background: #000000
+URxvt*foreground: #d0d0d0
+URxvt*color0: #101010
+URxvt*color1: #960050
+URxvt*color2: #66aa11
+URxvt*color3: #c47f2c
+URxvt*color4: #30309b
+URxvt*color5: #7e40a5
+URxvt*color6: #3579a8
+URxvt*color7: #9999aa
+URxvt*color8: #303030
+URxvt*color9: #ff0090
+URxvt*color10: #80ff00
+URxvt*color11: #ffba68
+URxvt*color12: #5f5fee
+URxvt*color13: #bb88dd
+URxvt*color14: #4eb4fa
+URxvt*color15: #d0d0d0
 
 !Ratmenu.Xresources
 ! Look in /etc/X11/rgb.txt for supported color names
